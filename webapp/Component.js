@@ -27,7 +27,6 @@ sap.ui.define([
 			
 				this.oRouter = this.getRouter();
 			
-				
 			var oModel = new JSONModel();
 			oModel.loadData("https://coronavirus-19-api.herokuapp.com/countries");	
 			this.setModel(oModel);
