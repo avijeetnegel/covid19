@@ -84,7 +84,7 @@ sap.ui.define([
 		},
 		HomeStateDetails:function(oEvent){
 			this.getOwnerComponent().getModel("indiaStats").setProperty("/hide",true);
-			debugger;
+		
 			var sStateName = oEvent.getParameter("arguments").state;
 			var oModel = this.getOwnerComponent().getModel("state");
 			

@@ -49,7 +49,6 @@ sap.ui.define([
 		
 		
 		onItemPress: function(oEvent) {
-				debugger;
 				var scountryName = oEvent.getParameter("listItem").getTitle();
 				var oBindingData = oEvent.getParameter("listItem").getBindingContextPath();
 				var myIndex = oBindingData.split('/')[oBindingData.split('/').length - 1];

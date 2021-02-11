@@ -33,7 +33,6 @@ sap.ui.define([
 		// };	
 		// },
 		_loadMasterPageOnBack:function(oEvent){
-			debugger;
 			var oSelectIndex = oEvent.getParameter("arguments").index;
 			var oList = this.getView().byId("myList");
 			var itemToBeSelected = oList.getItems()[parseInt(oSelectIndex)];
@@ -73,7 +72,6 @@ sap.ui.define([
 		},
 		
 		onItemPress: function(oEvent) {
-				debugger;
 				var scountryName = oEvent.getParameter("listItem").getTitle();
 				var oBindingData = oEvent.getParameter("listItem").getBindingContextPath();
 				var myIndex = oBindingData.split('/')[oBindingData.split('/').length-1];
