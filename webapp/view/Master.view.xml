@@ -1,0 +1,61 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="tsl.hrCOVID.controller.Master"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page id="countryListTitleId" title="Country List" 	showFooter='true' visible="true">
+								    <customHeader>
+      <Bar>
+        <contentLeft>
+          <Button icon="sap-icon://official-service" press="onBack" tooltip="Navigate to Fiori Launchpad"/>
+        </contentLeft>
+        <contentMiddle>
+          <Title titleStyle="H5" tooltip="{i18n>title}" text="{i18n>title}" level="H5"/>
+        </contentMiddle>
+        <contentRight>
+          <Button icon="sap-icon://home" press="onHome" visible="true"/>
+      <!--<Button id="cartBtn" icon="sap-icon://cart" tooltip="{i18n>title}" press="onToggleCart" class="newBtn"/>-->
+      <Button icon="sap-icon://arrow-right" press="onShowDetailPage" visible="{= ${device>/system/phone} ? true : false}" tooltip="Show Detail Page"/>
+        </contentRight>
+      </Bar>
+    </customHeader>
+				<subHeader>
+					<OverflowToolbar>
+						<SearchField search="onSearch" liveChange="onSearch" width="90%"/>
+					</OverflowToolbar>
+				</subHeader>
+				<content>
+					<List id="myList" 	items="{
+					path : '/',
+					sorter : {
+						path : 'Country',
+						descending : false
+					}
+				}"  mode="{device>/listMode}" selectionChange="onItemPress" headerDesign="Standard" growing="true" growingScrollToLoad="true" growingThreshold="10"  delete="ondelete">
+						<items>
+							<ObjectListItem type="{device>/listItemType}" press="onObjectPress" icon="{path:'country', formatter:'.formatter.countryFlag' }" showMarkers="true" intro="Recovered: {recovered}" number="{cases}" title="{country}">
+								<firstStatus>
+									<ObjectStatus text="Confirmed Cases" state="Success"/>
+								</firstStatus>
+								<ObjectAttribute text="Active: {active}" ></ObjectAttribute>
+								<ObjectAttribute text="Critical: {path: 'critical'}" ></ObjectAttribute>
+								<secondStatus>
+									<ObjectStatus text="Death: {deaths}" state="Error"/>
+								</secondStatus>	
+								</ObjectListItem>
+						</items>
+					</List>
+				</content>
+							<footer>
+					<Toolbar></Toolbar>
+					<!--	<OverflowToolbar>-->
+					<!--		<ToolbarSpacer/>-->
+					<!--		<Button text="Accept" type="Accept"/>-->
+					<!--		<Button text="Reject" type="Reject"/>-->
+					<!--		<Button text="Edit"/>-->
+					<!--		<Button text="Delete"/>-->
+					<!--	</OverflowToolbar>-->
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

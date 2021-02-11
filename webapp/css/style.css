@@ -1,0 +1,29 @@
+/* Enter your custom styles here */
+
+.tileLayout{
+	font-weight:bold;
+}
+.equalColumns .columns {
+	min-height: 200px;
+}
+
+.equalColumns .columns .sapMFlexItem {
+	padding: 0.5rem;
+}
+
+#countryListTitleId{
+	    font-family: initial;
+    font-size: x-large;
+    color: darkslategray;	
+}
+
+#__page1-title-inner, #__page2-title-inner, #__xmlview1--countryListTitleId-title-inner , #__xmlview2--HomepageiD-title-inner , #__page0-title-inner{
+	    font-family: initial;
+    font-size: x-large;
+    color: darkslategray;
+}
+
+/*.owl-carousel {*/
+/*-ms-touch-action: none;*/
+/*touch-action: none;*/
+/*}*/
